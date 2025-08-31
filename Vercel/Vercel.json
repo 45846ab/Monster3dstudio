@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "server/index.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/gemini3d/generate", "dest": "/server/index.js" },
+    { "src": "/gemini3d/generate-from-image", "dest": "/server/index.js" },
+    { "src": "/outputs/(.*)", "dest": "/server/index.js" }
+  ]
+}
